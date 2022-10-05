@@ -10,7 +10,7 @@ class CompanyEntity extends AbstractEntity
         'candidateFields'
     ];
 
-    public ?int $id = null;
+    public ?string $id = null;
 
     public ?string $name = null;
 

@@ -12,11 +12,11 @@ class CandidateApi extends AbstractApi
     /**
      * Get candidates with pagination
      *
-     * @return ApiPaginator
+     * @return ApiList
      */
-    public function list(): ApiPaginator
+    public function list(): ApiList
     {
-        return new ApiPaginator($this->client, 'candidates', CandidateEntity::class);
+        return new ApiList($this->client, 'candidates', CandidateEntity::class);
     }
 
 

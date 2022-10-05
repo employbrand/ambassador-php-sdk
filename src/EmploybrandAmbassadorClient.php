@@ -2,6 +2,8 @@
 
 namespace EmploybrandAmbassador;
 
+use EmploybrandAmbassador\Api\CompanyApi;
+use EmploybrandAmbassador\Api\WebhookApi;
 use EmploybrandAmbassador\Entity\Candidate;
 use EmploybrandAmbassador\Exceptions\Http\InternalServerError;
 use EmploybrandAmbassador\Exceptions\Http\NotFound;
@@ -22,6 +24,10 @@ class EmploybrandAmbassadorClient
     private $url = 'https://api.ambassador.employbrand.app';
 
     private $candidates;
+
+    private $company;
+
+    private $webhooks;
 
 
     public function __construct(string $companyId, string $token)
@@ -74,6 +80,24 @@ class EmploybrandAmbassadorClient
             $this->candidates = new Candidate($this);
 
         return $this->candidates;
+    }
+
+
+    public function webhooks(): WebhookApi
+    {
+        if( $this->webhooks == null )
+            $this->webhooks = new WebhookApi($this);
+
+        return $this->webhooks;
+    }
+
+
+    public function company(): CompanyApi
+    {
+        if( $this->company == null )
+            $this->company = new CompanyApi($this);
+
+        return $this->company;
     }
 
 

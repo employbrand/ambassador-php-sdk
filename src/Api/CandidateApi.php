@@ -6,7 +6,7 @@ namespace EmploybrandAmbassador\Api;
 use EmploybrandAmbassador\Entity\Candidate as CandidateEntity;
 
 
-class Candidate extends AbstractApi
+class CandidateApi extends AbstractApi
 {
 
     /**

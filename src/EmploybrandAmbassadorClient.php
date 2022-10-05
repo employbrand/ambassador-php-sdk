@@ -2,9 +2,9 @@
 
 namespace EmploybrandAmbassador;
 
+use EmploybrandAmbassador\Api\CandidateApi;
 use EmploybrandAmbassador\Api\CompanyApi;
 use EmploybrandAmbassador\Api\WebhookApi;
-use EmploybrandAmbassador\Entity\Candidate;
 use EmploybrandAmbassador\Exceptions\Http\InternalServerError;
 use EmploybrandAmbassador\Exceptions\Http\NotFound;
 use EmploybrandAmbassador\Exceptions\Http\NotValid;
@@ -74,10 +74,10 @@ class EmploybrandAmbassadorClient
     }
 
 
-    public function candidates(): Candidate
+    public function candidates(): CandidateApi
     {
         if( $this->candidates == null )
-            $this->candidates = new Candidate($this);
+            $this->candidates = new CandidateApi($this);
 
         return $this->candidates;
     }

@@ -22,7 +22,7 @@ class Candidate extends AbstractEntity
 
     public ?string $interviewedAt = null;
 
-    public ?object $ambassador = null;
+    public array $ambassador = [];
 
     public ?string $hiredAt = null;
 

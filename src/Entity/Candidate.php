@@ -22,6 +22,8 @@ class Candidate extends AbstractEntity
 
     public ?string $interviewedAt = null;
 
+    public ?object $ambassador = null;
+
     public ?string $hiredAt = null;
 
     public ?string $updatedAt = null;

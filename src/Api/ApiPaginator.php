@@ -61,7 +61,7 @@ class ApiPaginator extends AbstractApi
      * @param int|null $perPage
      * @return array
      */
-    public function page(int $page = 1, int $perPage = null): array
+    public function page(int $page = 1, ?int $perPage = null): array
     {
         if($perPage != null) $this->perPage = $perPage;
         $this->currentPage = $page;
